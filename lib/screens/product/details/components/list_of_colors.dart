@@ -16,29 +16,31 @@
 
 ///
 /// @author nghiatc
-/// @since Aug 27, 2020
+/// @since Aug 28, 2020
 
 import 'package:flutter/material.dart';
 
-// // App1
-// const kPrimaryColor = Color(0xFFA95EFA);
-// const kSecondaryColor = Color(0xFFF3F6F8);
-// const kTextColor = Color(0xFF171717);
+import '../../../../constants.dart';
+import 'color_dots.dart';
 
-// App2
-// list of colors that we use in our app
-const kBackgroundColor = Color(0xFFF1EFF1);
-const kPrimaryColor = Color(0xFF035AA6);
-const kSecondaryColor = Color(0xFFFFA41B);
-const kTextColor = Color(0xFF000839);
-const kTextLightColor = Color(0xFF747474);
-const kBlueColor = Color(0xFF40BAD5);
+class ListOfColors extends StatelessWidget {
+  const ListOfColors({
+    Key key,
+  }) : super(key: key);
 
-const kDefaultPadding = 20.0;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          ColorDot(fillColor: Color(0xFF80989A), isSelected: true,),
+          ColorDot(fillColor: Color(0xFFFF5200)),
+          ColorDot(fillColor: kPrimaryColor),
+        ],
+      ),
+    );
+  }
+}
 
-// our default Shadow
-const kDefaultShadow = BoxShadow(
-  offset: Offset(0, 15),
-  blurRadius: 27,
-  color: Colors.black12, // Black color with 12% opacity
-);
